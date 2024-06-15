@@ -1,9 +1,31 @@
 import Link from "next/link";
 
+// Define the mock URLs array
+const mockUrls = [
+  "https://utfs.io/f/04604c37-e4a0-48f7-9ec0-5157b1cac9f4-onopfv.jpg",
+  "https://utfs.io/f/156318f9-44d3-4901-804f-6e4f97e6b81f-b95z5u.webp",
+  "https://utfs.io/f/eeddaeca-3f9d-4618-a62a-32362e2b3994-5yb17s.webp",
+  "https://utfs.io/f/9ca676e5-a33f-4227-9bff-5f3dc37fd7b2-dydny6.webp",
+  "https://utfs.io/f/9ca676e5-a33f-4227-9bff-5f3dc37fd7b2-dydny6.webp",
+  "https://utfs.io/f/eeddaeca-3f9d-4618-a62a-32362e2b3994-5yb17s.webp",
+
+];
+
+// Map the URLs to objects with id and url properties
+const mockImage = mockUrls.map((url, index) => ({
+  id: index + 1,
+  url,
+}));
+
+// HomePage component
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      hello
-    </main>
+    <div className="flex flex-wrap">
+      {[...mockImage].map((image) => (
+        <div key={image.id} className="w-48 p-4">
+          <img src={image.url} alt={`Image ${image.id}`} />
+        </div>
+      ))}
+    </div>
   );
 }
