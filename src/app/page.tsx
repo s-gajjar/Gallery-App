@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import Link from "next/link";
 import { db } from "~/server/db";
 
@@ -17,6 +18,10 @@ const mockImage = mockUrls.map((url, index) => ({
   url,
 }));
 
+
+export const dynamic = "force-dynamic"
+
+
 // HomePage component
 export default async function HomePage() {
   const posts = await db.query.posts.findMany();
@@ -33,7 +38,7 @@ export default async function HomePage() {
         <img src={image.url} alt={`Mock Image ${index + 1}`} />
       </div>
     ))}
-    
+
     </div>
   );
 }
