@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { db } from "~/server/db";
 
 // Define the mock URLs array
 const mockUrls = [
@@ -8,7 +9,6 @@ const mockUrls = [
   "https://utfs.io/f/9ca676e5-a33f-4227-9bff-5f3dc37fd7b2-dydny6.webp",
   "https://utfs.io/f/9ca676e5-a33f-4227-9bff-5f3dc37fd7b2-dydny6.webp",
   "https://utfs.io/f/eeddaeca-3f9d-4618-a62a-32362e2b3994-5yb17s.webp",
-
 ];
 
 // Map the URLs to objects with id and url properties
@@ -18,14 +18,22 @@ const mockImage = mockUrls.map((url, index) => ({
 }));
 
 // HomePage component
-export default function HomePage() {
+export default async function HomePage() {
+  const posts = await db.query.posts.findMany();
+  console.log(posts);
+
   return (
     <div className="flex flex-wrap">
-      {[...mockImage].map((image) => (
-        <div key={image.id} className="w-48 p-4">
-          <img src={image.url} alt={`Image ${image.id}`} />
-        </div>
-      ))}
+    {posts.map((posts)=>(
+      <div key={posts.id}>{posts.name} </div>
+    ))}
+
+    {[...mockImage, ...mockImage, ...mockImage].map((image, index) => (
+      <div key={image.id + "-" + index} className="w-48 p-4">
+        <img src={image.url} alt={`Mock Image ${index + 1}`} />
+      </div>
+    ))}
+    
     </div>
   );
 }

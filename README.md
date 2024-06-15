@@ -5,7 +5,7 @@
 -[x] Make it deploy
 -[x] Scaffold basic ui with mock data
 -[x] tidy up the build process
--[] Actually set up a database
+-[x] Actually set up a database
 -[] Attach db to UI
 -[] make auth
 -[] add image upload
