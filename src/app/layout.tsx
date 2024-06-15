@@ -1,19 +1,13 @@
 import "~/styles/globals.css";
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
 import { GeistSans } from "geist/font/sans";
+import TopNav from "./_components/topnav";
 
-
-
-function TopNav(){
-  return(
-    <nav className="flex w-full items-center justify-between p-4 text-xl font-semibold border-b">
-      <div>Gallery</div>
-      <div>Signin</div>
-    </nav>
-  )
+export const  metadata = {
+  title: 'Gallery App',
+  description: "ok this is triall app by shreyansh"
 }
-
-
 
 
 export default function RootLayout({
@@ -22,11 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} flex flex-col gap-4`}>
-      <body>
-        <TopNav/>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className={`${GeistSans.variable} flex flex-col gap-4`}>
+        <body>
+          <TopNav/>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
