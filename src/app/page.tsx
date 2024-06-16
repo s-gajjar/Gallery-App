@@ -1,7 +1,6 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
 import { db } from "~/server/db";
 
-// Define the mock URLs array
 
 
 export const dynamic = "force-dynamic"
@@ -9,14 +8,14 @@ export const dynamic = "force-dynamic"
 
 async function Images(){
   const images = await db.query.images.findMany({
-    orderBy:(model,{desc})=>desc(model.id)
+    orderBy:(model,{asc})=>asc(model.id)
   });
 
   return(
     <div className="flex flex-wrap gap-4">
-        {[...images, ...images, ...images].map((image, index) => (
-          <div key={image.id + "-" + index} className="flex w-48 flex-col p-4">
-            <img src={image.url} alt={`Mock Image ${index + 1}`} />
+        {[...images].map((image, ) => (
+          <div key={image.id} className="flex w-48 flex-col p-4">
+            <img src={image.url} />
             <div>{image.name}</div>
           </div>
           
