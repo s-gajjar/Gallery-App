@@ -8,7 +8,7 @@
 -[x] Actually set up a database
 -[x] Attach db to UI
 -[x] make auth (w/ clerk)
--[] "taint" (server-only)
+-[x] "taint" | (server-only)
 -[] Use Next/Image Component
 -[] add image upload
 -[] error management(w/ senry)
