@@ -9,7 +9,7 @@
 -[x] Attach db to UI
 -[x] make auth (w/ clerk)
 -[x] "taint" | (server-only)
--[] Use Next/Image Component
+-[x] Use Next/Image Component
 -[] add image upload
 -[] error management(w/ senry)
 -[] routing/image page(paraller route)
