@@ -2,9 +2,9 @@ import { auth } from "@clerk/nextjs/server";
 import "server-only"
 import { db } from "~/server/db";
 
-const user = auth()
 
 export async function getMyImages(){
+  const user = auth()
 
 
     if (!user.userId) throw new Error("Unauthorized")
@@ -20,6 +20,7 @@ export async function getMyImages(){
 }
 
 export async function getImage(id: number) {
+  const user = auth()
 
   if(!user.userId) throw Error("Unauthorized")
 
