@@ -10,9 +10,9 @@
 -[x] make auth (w/ clerk)
 -[x] "taint" | (server-only)
 -[x] Use Next/Image Component
--[] add image upload
--[] error management(w/ senry)
--[] routing/image page(paraller route)
+-[x] add image upload
+-[x] error management(w/ senry)
+-[x] routing/image page(parallel route)
 -[] delete button(w/ server action)
 -[] Analytics( posthog)
 -[] ratelimiting(upstash)
