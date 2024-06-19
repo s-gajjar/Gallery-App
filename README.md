@@ -13,8 +13,9 @@
 -[x] add image upload
 -[x] error management(w/ senry)
 -[x] routing/image page(parallel route)
--[] Update upload button tp be less cringy
+-[x] Added Sooner for seeing image is loading
+-[x] Update upload button to be less cringy
+-[x] Analytics( posthog )
 -[] delete button(w/ server action)
--[] Analytics( posthog)
 -[] ratelimiting(upstash)
 
