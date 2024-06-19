@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-    <html lang="en" className={`${GeistSans.variable} flex flex-col gap-4`}>
+    <html lang="en" className={`${GeistSans.variable} flex flex-col gap-4 dark`}>
     <body>
       <NextSSRPlugin
       /**
