@@ -16,6 +16,6 @@
 -[x] Added Sooner for seeing image is loading
 -[x] Update upload button to be less cringy
 -[x] Analytics( posthog )
--[] delete button(w/ server action)
+-[x] delete button(w/ server action)
 -[] ratelimiting(upstash)
 
