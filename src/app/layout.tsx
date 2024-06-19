@@ -1,6 +1,6 @@
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
-
+import { Toaster } from "sonner"
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
 import { GeistSans } from "geist/font/sans";
@@ -43,6 +43,7 @@ export default function RootLayout({
     
         {modal}
         <div id="modal-root" />
+        <Toaster />
       </body>
     </html>
   </ClerkProvider>
