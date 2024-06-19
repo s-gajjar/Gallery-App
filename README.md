@@ -13,6 +13,7 @@
 -[x] add image upload
 -[x] error management(w/ senry)
 -[x] routing/image page(parallel route)
+-[] Update upload button tp be less cringy
 -[] delete button(w/ server action)
 -[] Analytics( posthog)
 -[] ratelimiting(upstash)
